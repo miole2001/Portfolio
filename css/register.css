@@ -8,8 +8,8 @@
 }
 
 :root{
-    --main-color: #c41e67;
-    --dark-color: #a71555;
+    --main-color: #5e3bee;
+    --dark-color: #5e3bee;
     --step-color: #ced7e0;
     --step-size: 32px;
     --steps: 4;
@@ -209,7 +209,7 @@ textarea{
 }
 
 .form-control {
-    margin-bottom: 8px; /* Added margin to create space between form-control blocks */
+    margin-bottom: 8px;
 }
 
 a {
@@ -230,22 +230,22 @@ select {
     border-radius: 4px;
     font-size: 16px;
     margin-bottom: 8px;
-    background-color: #fff; /* Ensure the background matches */
-    color: #333; /* Ensure the text color is consistent */
+    background-color: #fff;
+    color: #333;
 }
 
 /* Optional: Add a custom arrow for the dropdown if needed */
 select::-ms-expand {
-    display: none; /* Hide default dropdown arrow in IE */
+    display: none;
 }
 
 select {
-    -webkit-appearance: none; /* Remove default dropdown arrow in Webkit browsers */
-    -moz-appearance: none; /* Remove default dropdown arrow in Firefox */
-    appearance: none; /* Remove default dropdown arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     background: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpath d="M6 9l6 6 6-6"/%3E%3C/svg%3E') no-repeat right 12px center; /* Custom arrow */
-    background-size: 16px; /* Size of custom arrow */
-    background-color: #fff; /* Background color of the dropdown */
+    background-size: 16px;
+    background-color: #fff;
 }
 
 .additional-links {

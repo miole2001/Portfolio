@@ -98,7 +98,7 @@ nav ul {
 
 .pictures h3,
 .about .right h3,
-.portfolio .header h3 {
+.video .header h3 {
     font-size: 40px;
     margin-top: 20px;
 }
@@ -118,37 +118,11 @@ nav ul {
     transition: all 0.3s ease;
 }
 
-.pictures .skill-items .item:hover {
-    border-color: #5e3bee;
-}
-
-.pictures .skill-items .item .icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    width: 46px;
-    height: 46px;
+.pictures .skill-items .item img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
     border-radius: 10px;
-    margin-bottom: 22px;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
-}
-
-.pictures .skill-items .item .icon i {
-    font-size: 26px;
-    color: #006b6a;
-}
-
-.pictures .skill-items .item h4,
-.portfolio .portfo-items .item .info h4 {
-    font-size: 18px;
-}
-
-.pictures .skill-items .item p {
-    margin-top: 20px;
-    font-size: 14px;
-    line-height: 22px;
-    color: #1c1e53;
 }
 
 .about {
@@ -162,64 +136,37 @@ nav ul {
     width: 440px;
 }
 
-.portfolio {
+.video {
     background-color: #deebee;
     padding: 110px 85px;
 }
 
-.portfolio .header {
+.video .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 60px;
 }
 
-.portfolio .portfo-items {
+.video .video-items {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.portfolio .portfo-items .item {
+.video .video-items .item {
     width: 30%;
     background-color: #fff;
     border-radius: 10px;
-    cursor: pointer;
     box-shadow: 0 5px 32px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
 }
 
-.portfolio .portfo-items .item:hover {
-    border-color: #5e3bee;
-}
-
-.portfolio .portfo-items .item img {
+.video .video-items .item video {
     width: 100%;
-    height: 240px;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 10px 10px 20px 20px;
-}
-
-.portfolio .portfo-items .item .info {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    padding: 20px 32px 42px;
-}
-
-.portfolio .portfo-items .item .info p {
-    font-size: 13px;
-}
-
-.portfolio .portfo-items .item .info a {
-    text-decoration: underline;
-    text-underline-offset: 10px;
-    text-decoration-color: #5e3bee;
-}
-
-.feedback {
-    padding: 110px 85px;
+    height: auto;
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -249,7 +196,7 @@ nav ul {
 
     .pictures h3,
     .about .right h3,
-    .portfolio .header h3 {
+    .video .header h3 {
         font-size: 32px;
     }
 }
@@ -271,37 +218,54 @@ nav ul {
         padding: 85px 42px;
     }
 
-    .portfolio {
+    .video {
         padding: 60px 42px;
-    }
-
-    .feedback {
-        padding: 85px 42px;
-    }
-
-    footer {
-        padding: 85px 42px;
     }
 }
 
-@media screen and (max-width: 576px) {
-    .main .left h3 {
-        font-size: 32px;
+.upload-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.upload-form label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.upload-form input[type="file"] {
+    margin-bottom: 15px;
+}
+
+.upload-form button {
+    background-color: #5e3bee;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-form button:hover {
+    background-color: #4b2eb7;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .upload-form {
+        padding: 15px;
     }
 
-    .main .left p {
-        font-size: 16px;
+    .upload-form label {
+        font-size: 14px;
     }
 
-    .portfolio .header button {
-        font-size: 12px;
-    }
-
-    .portfolio .portfo-items .item {
-        width: 80%;
-    }
-
-    .feedback .customers .item {
+    .upload-form button {
         width: 100%;
     }
 }

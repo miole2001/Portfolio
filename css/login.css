@@ -8,8 +8,8 @@
 }
 
 :root {
-    --main-color: #c41e67;
-    --dark-color: #a71555;
+    --main-color: #5e3bee;
+    --dark-color: #5e3bee;
     --step-color: #ced7e0;
 }
 
@@ -60,16 +60,16 @@ input:focus, select:focus {
 }
 
 select {
-    -webkit-appearance: none; /* Remove default dropdown arrow in Webkit browsers */
-    -moz-appearance: none; /* Remove default dropdown arrow in Firefox */
-    appearance: none; /* Remove default dropdown arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     background: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpath d="M6 9l6 6 6-6"/%3E%3C/svg%3E') no-repeat right 12px center; /* Custom arrow */
-    background-size: 16px; /* Size of custom arrow */
-    background-color: #fff; /* Background color of the dropdown */
+    background-size: 16px;
+    background-color: #fff;
 }
 
 select::-ms-expand {
-    display: none; /* Remove default arrow for IE */
+    display: none;
 }
 
 button {
@@ -89,16 +89,16 @@ button:active, button:hover {
 }
 
 button:focus {
-    outline-color: #c41e67;
+    outline-color: #5e3bee;
 }
 
 .submit-btn {
-    background-color: #c41e67;
+    background-color: #5e3bee;
 }
 
 .submit-btn:hover, 
 .submit-btn:active {
-    background-color: #a71555;
+    background-color: #5e3bee;
 }
 
 a {

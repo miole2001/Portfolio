@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 04, 2024 at 03:10 PM
+-- Generation Time: Oct 19, 2024 at 06:22 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `portfolio`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `album`
+--
+
+CREATE TABLE `album` (
+  `id` int(11) NOT NULL,
+  `my_pictures` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `album`
+--
+
+INSERT INTO `album` (`id`, `my_pictures`) VALUES
+(1, 'a.jpg'),
+(3, '1.jpg'),
+(4, 'b.jpg'),
+(6, '2.jpg');
 
 -- --------------------------------------------------------
 
@@ -60,6 +81,12 @@ INSERT INTO `my_info` (`id`, `first_name`, `student_id`, `last_name`, `middle_na
 --
 
 --
+-- Indexes for table `album`
+--
+ALTER TABLE `album`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `my_info`
 --
 ALTER TABLE `my_info`
@@ -68,6 +95,12 @@ ALTER TABLE `my_info`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `album`
+--
+ALTER TABLE `album`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `my_info`

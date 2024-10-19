@@ -8,7 +8,6 @@ if ($result->num_rows > 0) {
 } else {
     die('Data not found.');
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,109 +51,83 @@ if ($result->num_rows > 0) {
 
     <div class="pictures" id="pictures">
         <h3>My Pictures</h3>
+        <form action="" method="post" enctype="multipart/form-data" class="upload-form">
+            <label for="image">Choose an image to upload:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+            <button type="submit" name="upload">Upload Image</button>
+        </form>
+
         <div class="skill-items">
-            <div class="item">
-                <div class="icon"><i class='bx bx-directions'></i></div>
-                <h4>Strategy & Direction</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-                    tristique.
-                </p>
-            </div>
-            <div class="item">
-                <div class="icon"><i class='bx bx-bookmark-heart'></i></div>
-                <h4>Branding & Logo</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-                    tristique.
-                </p>
-            </div>
-            <div class="item">
-                <div class="icon"><i class='bx bxl-figma'></i></i></div>
-                <h4>UI & UX Design</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-                    tristique.
-                </p>
-            </div>
-            <div class="item">
-                <div class="icon"><i class='bx bx-code-alt'></i></i></div>
-                <h4>Webflow Coding</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum
-                    tristique.
-                </p>
-            </div>
+            <?php
+            if (isset($_POST['upload'])) {
+                $imageName = $_FILES["image"]["name"];
+                $sql = "INSERT INTO album (my_pictures) VALUES ('$imageName')";
+                $connection->query($sql);
+                header("location: index.php");
+            }
+            $sql = "SELECT * FROM album"; 
+            $result = $connection->query($sql);
+
+            if ($result->num_rows > 0) {
+                while ($album = $result->fetch_assoc()) {
+                    echo '<div class="item">';
+                    echo '<img src="./images/' . $album['my_pictures'] . '" alt="">';
+                    echo '</div>'; 
+                }
+            } else {
+                echo '<p>No images found.</p>';
+            }
+            ?>
         </div>
     </div>
 
     <div class="about" id="contact">
-    <div class="left">
+        <div class="left">
             <img src="images/1.jpg">
         </div>
         <div class="right">
             <h3>About Me</h3>
             <p>
-            Hi there! I’m <?php echo $display['first_name'] . ' ' . $display['middle_name'] . ' ' . $display['last_name']; ?>, born on <?php echo $display['birth_date']; ?>.
-            I’m <?php echo $display['gender']; ?> and I live in <?php echo $display['address']; ?>.
-            Currently, I’m studying at <?php echo $display['university'] . ' ' . $display['campus']; ?> in the <?php echo $display['course']; ?> program, focusing on <?php echo $display['major']; ?>. 
-            I’m in my <?php echo $display['year_level']; ?> and my student ID is <?php echo $display['student_id']; ?>.
-
+                Hi there! I’m <?php echo $display['first_name'] . ' ' . $display['middle_name'] . ' ' . $display['last_name']; ?>, born on <?php echo $display['birth_date']; ?>.
+                I’m <?php echo $display['gender']; ?> and I live in <?php echo $display['address']; ?>.
+                Currently, I’m studying at <?php echo $display['university'] . ' ' . $display['campus']; ?> in the <?php echo $display['course']; ?> program, focusing on <?php echo $display['major']; ?>. 
+                I’m in my <?php echo $display['year_level']; ?> and my student ID is <?php echo $display['student_id']; ?>.
             </p>
-            <br><br><br><br>
-
             <h3>My Social & Contact Information</h3>
-            <br>
             <h4>Facebook: <?php echo $display['facebook']; ?></h4>
-            <br>
             <h4>Email : <?php echo $display['email']; ?></h4>
-            <br>
             <h4>Contact Number: <?php echo $display['number']; ?></h4>
         </div>
     </div>
 
-    <div class="portfolio" id="videos">
+    <div class="video" id="videos">
         <div class="header">
             <div class="info">
-                <h5>Recent Projects</h5>
-                <h3>My Portfolio</h3>
+                <h3>My Videos</h3>
             </div>
         </div>
 
-        <div class="portfo-items">
+        <div class="video-items">
             <div class="item">
-                <img src="assets/sc-1.jpg">
-                <div class="info">
-                    <h4>Portfolio #3</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
-                    </p>
-                    <a href="#">View in Github <i class='bx bx-link-external'></i></a>
-                </div>
+                <video controls>
+                    <source src="video/test.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
             <div class="item">
-                <img src="assets/sc-2.jpg">
-                <div class="info">
-                    <h4>Simple Blog Page</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
-                    </p>
-                    <a href="#">View in Github <i class='bx bx-link-external'></i></a>
-                </div>
+                <video controls>
+                    <source src="video/test.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
             <div class="item">
-                <img src="assets/sc-3.jpg">
-                <div class="info">
-                    <h4>Animated Nav</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
-                    </p>
-                    <a href="#">View in Github <i class='bx bx-link-external'></i></a>
-                </div>
+                <video controls>
+                    <source src="video/test.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
-
     </div>
-</body>
 
+</body>
 </html>
