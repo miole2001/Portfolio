@@ -109,8 +109,8 @@
             <button type="submit" class="submit-btn">Submit</button>
         </div>
         <div class="additional-links">
-            <p>already have an account? <a href="login.php">Login</a></p>
-            <a href="index.php">Back to Home</a>
+            <p>already have an account? <a href="index.php">Login</a></p>
+            <!-- <a href="index.php">Back to Home</a> -->
         </div>
     </form>
 </body>
